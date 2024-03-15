@@ -3,7 +3,7 @@ async function vote(/*first*/) {
         chrome.runtime.sendMessage({successfully: true})
         return
     }
-    if (document.querySelector('div.container div.col-lg-5').textContent.includes('already voted')) {
+    if (document.querySelector('div.container div.col-lg-5').textContent.includes('can vote again')) {
         chrome.runtime.sendMessage({later: true})
         return
     }
