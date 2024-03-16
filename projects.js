@@ -1608,6 +1608,13 @@ var allProjects = {
         parseURL: (url) => ({id: url.pathname.split('/')[2]}),
         alertManualCaptcha: () => true
     },
+    'blockatlas.net': {
+        pageURL: (project) => 'https://blockatlas.net/' + project.id,
+        voteURL: (project) => 'https://blockatlas.net/' + project.id + '/vote',
+        projectName: (doc) => doc.querySelector('label.font-bold').innerText,
+        exampleURL: () => ['https://blockatlas.net/', 'server-friends-Vanilla.131', '/vote'],
+        parseURL: (url) => ({id: url.pathname.split('/')[1]}),
+    },
     Custom: {
         pageURL: (project) => project.responseURL,
         voteURL: (project) => project.responseURL,
